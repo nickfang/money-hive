@@ -1,7 +1,7 @@
 <script>
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from 'flowbite-svelte';
 </script>
-
+<h1>Transactions Page</h1>
 <div class="table-container">
   <Table color="yellow" divClass="relative overflow-x-auto">
     <TableHead>

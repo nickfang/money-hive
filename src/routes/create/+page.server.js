@@ -1,6 +1,7 @@
 import { createPool, sql } from '@vercel/postgres';
 
 async function seed() {
+  console.log('seed');
   const createUserTable = await sql`
     CREATE TABLE IF NOT EXISTS users (
       id SERIAL PRIMARY KEY,

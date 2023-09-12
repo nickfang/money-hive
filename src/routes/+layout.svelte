@@ -4,6 +4,7 @@
 	import './styles.css';
 </script>
 
+<Header />
 <main>
 	<div class="main">
 		<slot />
