@@ -1,3 +1,31 @@
+# Money Hive
+
+## Setup
+
+- Install Vercel
+  ```bash
+  npm i -g vercel@latest
+  ```
+
+- Get Environment Variables
+  ```bash
+  ercel env pull .env.development.local
+  ```
+
+- Install packages
+  ```bash
+  npm install
+  ```
+
+- Run dev server
+  ```bash
+  npm run dev
+  ```
+
+
+
+---
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
