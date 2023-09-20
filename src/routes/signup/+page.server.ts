@@ -31,12 +31,11 @@ export const actions = {
         }
 
         // 5.
-        await prisma.user.create({
-            data: {
-                first_name: name,
-                email: userEmail,
-            },
-        });
+        // await prisma.user.create({
+        //     first_name: name,
+        //     last_name: name,
+        //     email: userEmail,
+        // });
 
         throw redirect(303, `/drafts`)
     }

@@ -40,6 +40,7 @@ async function main() {
       category: 'DEPOSIT',
     },
   })
+  console.log(transaction)
 
   console.log(`Seeding finished.`)
 }
