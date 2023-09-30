@@ -5,7 +5,7 @@
 </script>
 
 <Header />
-<main>
+<main class="container py-4">
 	<div class="main">
 		<slot />
 	</div>
