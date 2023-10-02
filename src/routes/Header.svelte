@@ -17,7 +17,7 @@
 
 		<a
 			href="/transactions"
-			class={$page.url.pathname.includes('/transactions') ? activeClasses : inactiveClasses}
+			class={$page.url.pathname === '/transactions' ? activeClasses : inactiveClasses}
 		>
 			Transactions
 		</a>
