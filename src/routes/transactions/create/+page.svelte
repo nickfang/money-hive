@@ -4,7 +4,9 @@
 	}
 
 	const inputClasses =
-		'block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6';
+		'block w-full rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6';
+
+	const inputPadding = 'py-1.5 px-3';
 
 	const labelClasses = 'text-sm font-medium text-gray-700 leading-6 mb-3 block';
 </script>
@@ -14,7 +16,7 @@
 
 	<label class={labelClasses}>
 		<span class="block mb-1">Name</span>
-		<input type="text" name="name" class={inputClasses} />
+		<input type="text" name="name" class={inputClasses + inputPadding} />
 	</label>
 
 	<label class={labelClasses}>
