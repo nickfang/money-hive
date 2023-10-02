@@ -1,4 +1,6 @@
 <script>
+	import { goto } from '$app/navigation';
+
 	function validate() {
 		console.log("I'm the validate() function");
 	}
@@ -26,7 +28,13 @@
 				<span class="text-gray-500 sm:text-sm">$</span>
 			</div>
 
-			<input type="text" name="amount" id="amount" class={inputClasses} placeholder="0.00" />
+			<input
+				type="text"
+				name="amount"
+				id="amount"
+				class={`${inputClasses} pl-7 pr-20`}
+				placeholder="0.00"
+			/>
 		</div>
 	</label>
 
@@ -48,7 +56,8 @@
 
 		<button
 			class="bg-zinc-100 border border-zinc-300 rounded text-zinc-800 px-4 py-1.5 hover:bg-zinc-200 transition-colors"
-			type="submit">Cancel</button
+			type="submit"
+			on:click={() => goto('/transactions')}>Cancel</button
 		>
 	</div>
 </form>
