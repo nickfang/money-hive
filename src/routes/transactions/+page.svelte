@@ -60,7 +60,7 @@
 		return `${type === 'debit' ? '+' : '-'}$${numberToPrice(price)}`;
 	}
 
-	const total = transactions.reduce((acc, curr) => {
+	$: total = transactions.reduce((acc, curr) => {
 		if (curr.type === 'debit') {
 			return acc + curr.price;
 		}
@@ -101,12 +101,6 @@
 </script>
 
 <div>
-	<section class="mb-4">
-		<a href="/transactions/create" class="bg-indigo-600 text-white rounded px-4 py-2 inline-block"
-			>Create a Transaction</a
-		>
-	</section>
-
 	<form on:submit|preventDefault={submit}>
 		<Table divClass="relative overflow-x-auto">
 			<TableHead>
@@ -125,7 +119,9 @@
 						</TableBodyCell>
 						<TableBodyCell>{category}</TableBodyCell>
 						<TableBodyCell class="text-center">
-							<button class="text-indigo-600 hover:text-indigo-800 hover:underline">Edit</button>
+							<button type="button" class="text-indigo-600 hover:text-indigo-800 hover:underline"
+								>Edit</button
+							>
 						</TableBodyCell>
 					</TableBodyRow>
 				{/each}
@@ -183,6 +179,7 @@
 						<button
 							on:click={() => null}
 							class="bg-indigo-600 hover:bg-indigo-800 text-white rounded px-4 py-1.5"
+							type="submit"
 						>
 							Add
 						</button>
