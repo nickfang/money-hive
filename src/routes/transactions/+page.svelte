@@ -19,6 +19,7 @@
 
 	type TransactionType = 'debit' | 'credit';
 
+	// TODO: Retrieve transactions from database
 	let transactions: Transaction[] = [
 		{
 			id: 1,
@@ -119,6 +120,7 @@
 						</TableBodyCell>
 						<TableBodyCell>{category}</TableBodyCell>
 						<TableBodyCell class="text-center">
+							<!-- TODO: Update to turn text into input fields -->
 							<button type="button" class="text-indigo-600 hover:text-indigo-800 hover:underline"
 								>Edit</button
 							>
