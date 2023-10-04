@@ -1,6 +1,7 @@
 # Money Hive
 
 [Project Board](https://github.com/users/nickfang/projects/2/views/1)
+
 ---
 
 ## Setup
@@ -12,7 +13,7 @@
 
 - Get Environment Variables
   ```bash
-  ercel env pull .env.development.local
+  vercel env pull .env.development.local
   ```
 
 - Install packages
