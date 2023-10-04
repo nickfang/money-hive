@@ -1,5 +1,6 @@
 module.exports = {
 	root: true,
+	plugins: ['@typescript-eslint/recommended-type-checked'],
 	extends: ['eslint:recommended', 'plugin:svelte/recommended', 'prettier'],
 	parserOptions: {
 		sourceType: 'module',
