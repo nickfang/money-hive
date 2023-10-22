@@ -1,14 +1,11 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model User {
@@ -16,32 +13,30 @@ model User {
   email        String         @unique
   first_name   String
   last_name    String
-
-  Transaction Transaction[]
   Cell         Cell[]
+  Transactions Transactions[]
+
+  @@index([email])
 }
 
-model Transaction {
+model Cell {
+  id           Int            @id @default(autoincrement())
+  name         String
+  description  String
+  total        Int
+  user_id      Int
+  user         User           @relation(fields: [user_id], references: [id])
+  Transactions Transactions[]
+}
+
+model Transactions {
   id          Int    @id @default(autoincrement())
   amount      Int
   name        String
   description String
   category    String
-
-  user        User   @relation(fields: [user_id], references: [id])
   user_id     Int
-  cell        Cell   @relation(fields: [cell_id], references: [id])
   cell_id     Int
-}
-
-model Cell {
-  id          Int    @id @default(autoincrement())
-  name        String
-  description String
-  total       Int
-
-  user        User   @relation(fields: [user_id], references: [id])
-  user_id     Int
-
-  Transaction Transaction[]
+  Cell        Cell   @relation(fields: [cell_id], references: [id])
+  User        User   @relation(fields: [user_id], references: [id])
 }
