@@ -4,6 +4,8 @@
 
 ---
 
+# Development
+
 ## Setup
 
 - Install Vercel
@@ -21,10 +23,39 @@
   npm install
   ```
 
+- Install Docker Desktop<br>
+  - [Download Docker Desktop](https://www.docker.com/get-started/)<br>
+  - Follow the install instruction
+
+- Run local postgres server<br>
+  ```
+  docker compose -f local build
+  docker compose -f local up
+  ```
+
+
 - Run dev server
   ```bash
   npm run dev
   ```
+
+
+## Prisma
+
+While developing, we can use `npx prisma db push`.  Once we start putting more than just test data in, start using migrations so the data won't be erased each time we push.  We can also update `/prisma/seed.js` to see test data.
+
+### Migrations
+
+To change the database, you need to update the schema and then create a migration.
+- Update `/prisma/schema.prisma`
+- Create migration
+  ```
+  npx prisma migrate --name <migration name>
+  ```
+
+### Notes
+
+[Type mappings for Postgres](https://www.prisma.io/docs/concepts/database-connectors/postgresql#native-type-mappings)
 
 
 
