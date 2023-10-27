@@ -40,6 +40,7 @@ async function seed() {
 }
 
 export async function load() {
+  console.log("load");
   const db = createPool();
   const startTime = Date.now();
   try {
