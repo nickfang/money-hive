@@ -6,6 +6,7 @@
 		"dev": "vite dev",
 		"dev:vercel": "vercel dev",
 		"build": "vite build",
+		"postinstall": "prisma generate",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
