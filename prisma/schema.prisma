@@ -16,15 +16,32 @@ model User {
   email        String         @unique
   first_name   String
   last_name    String
-  Transactions Transactions[]
+
+  Transaction Transaction[]
+  Cell         Cell[]
 }
 
-model Transactions {
+model Transaction {
   id          Int    @id @default(autoincrement())
   amount      Int
   name        String
   description String
   category    String
+
   user        User   @relation(fields: [user_id], references: [id])
   user_id     Int
+  cell        Cell   @relation(fields: [cell_id], references: [id])
+  cell_id     Int
+}
+
+model Cell {
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String
+  total       Int
+
+  user        User   @relation(fields: [user_id], references: [id])
+  user_id     Int
+
+  Transaction Transaction[]
 }

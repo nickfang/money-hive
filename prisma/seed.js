@@ -17,17 +17,30 @@ async function main() {
     },
   })
 
-  const transaction = await prisma.transactions.upsert({
+  const cell = await prisma.cell.upsert({
+    where: { id: 1 },
+    update: {},
+    create: {
+      name: 'Cell 1',
+      user_id: nick.id,
+      description: 'Cell 1',
+      total: 1000,
+    },
+  })
+
+  const transaction = await prisma.transaction.upsert({
     where: { id: 1 },
     update: {},
     create: {
       name: 'Initial deposit',
       user_id: nick.id,
+      cell_id: cell.id,
       amount: 1000,
       description: 'Initial deposit',
       category: 'DEPOSIT',
     },
   })
+
   console.log(`Seeding finished.`)
 }
 
