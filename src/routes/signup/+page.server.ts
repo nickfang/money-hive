@@ -37,6 +37,6 @@ export const actions = {
         //     email: userEmail,
         // });
 
-        throw redirect(303, `/drafts`)
+        redirect(303, `/drafts`);
     }
 } satisfies Actions;
